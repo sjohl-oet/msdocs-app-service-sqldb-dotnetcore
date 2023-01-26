@@ -1,0 +1,32 @@
+name: manage-azure-policy-45ac17ad
+on:
+  workflow_dispatch:
+    inputs:
+      remarks:
+        description: 'Reason for triggering the workflow run'
+        required: false
+        default: 'Updating Azure Policies'
+
+
+## Uncomment the following if you wish to automatically trigger workflow run with every commit
+#
+#  push:
+#    paths:
+#      - 'policies/TEST_-_Deploy_-_Microsoft_Defender_should_be_enabled_for_Storage_Accounts_abb498b0-bcde-41bd-a89d-2c64e1105919/**'
+#      - .github/workflows/manage-azure-policy-45ac17ad.yml
+jobs:
+  apply-azure-policy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS_45ac17ad}}
+        allow-no-subscriptions: true
+    - name: Create or Update Azure Policies
+      uses: azure/manage-azure-policy@v0
+      with:
+        paths: |
+          policies/TEST_-_Deploy_-_Microsoft_Defender_should_be_enabled_for_Storage_Accounts_abb498b0-bcde-41bd-a89d-2c64e1105919/**

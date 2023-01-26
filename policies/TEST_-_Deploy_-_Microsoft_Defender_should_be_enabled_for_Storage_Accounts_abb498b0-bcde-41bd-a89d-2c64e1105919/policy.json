@@ -1,0 +1,81 @@
+{
+ "properties": {
+  "displayName": "TEST - Deploy - Microsoft Defender should be enabled for Storage Accounts",
+  "policyType": "Custom",
+  "mode": "Indexed",
+  "description": "TEST - The Microsoft Defender should be enabled for the Storage Accounts at the Resource Group scope, and this is a deploy.",
+  "metadata": {
+   "category": "Storage",
+   "createdBy": "a2f4f2e7-1f57-441d-af3c-8426e06a10e0",
+   "createdOn": "2023-01-25T07:22:52.8699391Z",
+   "updatedBy": "a2f4f2e7-1f57-441d-af3c-8426e06a10e0",
+   "updatedOn": "2023-01-25T18:04:58.8749435Z"
+  },
+  "parameters": {
+   "effect": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Effect",
+     "description": "Enable or disable the execution of the policy"
+    },
+    "allowedValues": [
+     "DeployIfNotExists",
+     "Disabled"
+    ],
+    "defaultValue": "DeployIfNotExists"
+   }
+  },
+  "policyRule": {
+   "if": {
+    "field": "type",
+    "equals": "Microsoft.Storage/storageAccounts"
+   },
+   "then": {
+    "effect": "[parameters('effect')]",
+    "details": {
+     "type": "Microsoft.Security/advancedThreatProtectionSettings",
+     "name": "current",
+     "existenceCondition": {
+      "field": "Microsoft.Security/advancedThreatProtectionSettings/isEnabled",
+      "equals": "true"
+     },
+     "roleDefinitionIds": [
+      "/providers/Microsoft.Authorization/roleDefinitions/fb1c8493-542b-48eb-b624-b4c8fea62acd"
+     ],
+     "deployment": {
+      "properties": {
+       "mode": "incremental",
+       "template": {
+        "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+        "contentVersion": "1.0.0.0",
+        "parameters": {
+         "storageAccountName": {
+          "type": "string"
+         }
+        },
+        "resources": [
+         {
+          "apiVersion": "2019-01-01",
+          "type": "Microsoft.Storage/storageAccounts/providers/advancedThreatProtectionSettings",
+          "name": "[concat(parameters('ResourceName'), '/Microsoft.Security/current')]",
+          "properties": {
+           "isEnabled": true
+          }
+         }
+        ]
+       },
+       "parameters": {
+        "ResourceName": {
+         "value": "[field('name')]"
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "id": "/subscriptions/9bdb8e29-156f-4fc9-a1fe-1bb6a915a4f0/providers/Microsoft.Authorization/policyDefinitions/abb498b0-bcde-41bd-a89d-2c64e1105919",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "abb498b0-bcde-41bd-a89d-2c64e1105919"
+}
