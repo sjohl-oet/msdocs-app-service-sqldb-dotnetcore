@@ -34,3 +34,4 @@ jobs:
           policies/Azure_Defender_for_Key_Vault_should_be_enabled_0e6763cc-5078-4e64-889d-ff4d9a839047/**
           policies/Azure_Defender_for_App_Service_should_be_enabled_2913021d-f2fd-4f3d-b958-22354e2bdbcb/**
           policies/Append_a_tag_and_its_value_to_resources_2a0e14a6-b0a6-4fab-991a-187a4f81c498/**
+          policies/CustomTagPolicyTest_0ce1abff-68a5-45c4-9894-8edd6dee48d2/**
