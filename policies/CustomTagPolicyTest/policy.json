@@ -1,5 +1,6 @@
 {
   "id": "/subscriptions/9bdb8e29-156f-4fc9-a1fe-1bb6a915a4f0/providers/Microsoft.Authorization/policyDefinitions/0ce1abff-68a5-45c4-9894-8edd6dee48d2",
+  "type": "Microsoft.Authorization/policyDefinitions",
   "name": "0ce1abff-68a5-45c4-9894-8edd6dee48d2",
   "properties": {
     "id": "/subscriptions/9bdb8e29-156f-4fc9-a1fe-1bb6a915a4f0/providers/Microsoft.Authorization/policyDefinitions/0ce1abff-68a5-45c4-9894-8edd6dee48d2",
