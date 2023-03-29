@@ -1,0 +1,238 @@
+{
+  "properties": {
+    "displayName": "CustomTagPolicyTest",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Adds below tags if not defined\nproject\naccount_code\ncost_center\ncost_center_percent\ncustomer_id\nrate_code\nservice_req\nurl\nusetype \n",
+    
+    "parameters": {
+      "tagName1": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Tag Name1",
+          "description": "Name of the tag, such as 'project'"
+        },
+        "defaultValue": "project"
+      },
+      "tagValue1": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Tag Name1 Value",
+          "description": "Value of the tag, such as 'COVID'"
+        },
+        "defaultValue": "COVID"
+      },
+      "tagName2": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Tag Name2",
+          "description": "Name of the tag, such as 'account_code'"
+        },
+        "defaultValue": "account_code"
+      },
+      "tagValue2": {
+        "type": "String",
+        "metadata": {
+          "displayName": "TagName2 Value",
+          "description": "Value of the tag, such as '18BCP00006'"
+        },
+        "defaultValue": "18BCP00006"
+      },
+      "tagName3": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Tag Name3",
+          "description": "Name of the tag, such as 'cost_center'"
+        },
+        "defaultValue": "cost_center"
+      },
+      "tagValue3": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Tag Name3 Value",
+          "description": "Value of the tag, such as '067'"
+        },
+        "defaultValue": "157"
+      },
+      "tagName4": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Tag Name4",
+          "description": "Name of the tag, such as 'cost_center_percent'"
+        },
+        "defaultValue": "cost_center_percent"
+      },
+      "tagValue4": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Tag Name4 Value",
+          "description": "Value of the tag, such as '100'"
+        },
+        "defaultValue": "100"
+      },
+      "tagName5": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Tag Name5",
+          "description": "Name of the tag, such as 'customer_id'"
+        },
+        "defaultValue": "customer_id"
+      },
+      "tagValue5": {
+        "type": "String",
+        "metadata": {
+          "displayName": "TagName5 Value",
+          "description": "Value of the tag, such as 'CDT'"
+        },
+        "defaultValue": "CDT"
+      },
+      "tagName6": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Tag Name6",
+          "description": "Name of the tag, such as 'rate_code'"
+        },
+        "defaultValue": "rate_code"
+      },
+      "tagValue6": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Tag Name6 Value",
+          "description": "Value of the tag, such as 'K701'"
+        },
+        "defaultValue": "K702"
+      },
+      "tagName7": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Tag Name7",
+          "description": "Name of the tag, such as 'usetype'"
+        },
+        "defaultValue": "usetype"
+      },
+      "tagValue7": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Tag Name7 Value",
+          "description": "Value of the tag, such as 'POC'"
+        },
+        "defaultValue": "POC"
+      },
+      "tagName8": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Tag Name8",
+          "description": "Name of the tag, such as 'service_req'"
+        },
+        "defaultValue": "service_req"
+      },
+      "tagValue8": {
+        "type": "String",
+        "metadata": {
+          "displayName": "TagName8 Value",
+          "description": "Value of the tag, such as '112233'"
+        },
+        "defaultValue": "112233"
+      },
+      "tagName9": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Tag Name9",
+          "description": "Name of the tag, such as 'url'"
+        },
+        "defaultValue": "url"
+      },
+      "tagValue9": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Tag Name9 Value",
+          "description": "Value of the tag, such as 'TBD'"
+        },
+        "defaultValue": "TBD"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "[concat('tags[', parameters('tagName1'), ']')]",
+            "exists": "false"
+          },
+          {
+            "field": "[concat('tags[', parameters('tagName2'), ']')]",
+            "exists": "false"
+          },
+          {
+            "field": "[concat('tags[', parameters('tagName3'), ']')]",
+            "exists": "false"
+          },
+          {
+            "field": "[concat('tags[', parameters('tagName4'), ']')]",
+            "exists": "false"
+          },
+          {
+            "field": "[concat('tags[', parameters('tagName5'), ']')]",
+            "exists": "false"
+          },
+          {
+            "field": "[concat('tags[', parameters('tagName6'), ']')]",
+            "exists": "false"
+          },
+          {
+            "field": "[concat('tags[', parameters('tagName7'), ']')]",
+            "exists": "false"
+          },
+          {
+            "field": "[concat('tags[', parameters('tagName8'), ']')]",
+            "exists": "false"
+          },
+          {
+            "field": "[concat('tags[', parameters('tagName9'), ']')]",
+            "exists": "false"
+          }
+        ]
+      },
+      "then": {
+        "effect": "append",
+        "details": [
+          {
+            "field": "[concat('tags[', parameters('tagName1'), ']')]",
+            "value": "[parameters('tagValue1')]"
+          },
+          {
+            "field": "[concat('tags[', parameters('tagName2'), ']')]",
+            "value": "[parameters('tagValue2')]"
+          },
+          {
+            "field": "[concat('tags[', parameters('tagName3'), ']')]",
+            "value": "[parameters('tagValue3')]"
+          },
+          {
+            "field": "[concat('tags[', parameters('tagName4'), ']')]",
+            "value": "[parameters('tagValue4')]"
+          },
+          {
+            "field": "[concat('tags[', parameters('tagName5'), ']')]",
+            "value": "[parameters('tagValue5')]"
+          },
+          {
+            "field": "[concat('tags[', parameters('tagName6'), ']')]",
+            "value": "[parameters('tagValue6')]"
+          },
+          {
+            "field": "[concat('tags[', parameters('tagName7'), ']')]",
+            "value": "[parameters('tagValue7')]"
+          },
+          {
+            "field": "[concat('tags[', parameters('tagName8'), ']')]",
+            "value": "[parameters('tagValue8')]"
+          },
+          {
+            "field": "[concat('tags[', parameters('tagName9'), ']')]",
+            "value": "[parameters('tagValue9')]"
+          }
+        ]
+      }
+    }
+  }
+}
