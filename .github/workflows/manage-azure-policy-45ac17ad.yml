@@ -30,3 +30,4 @@ jobs:
       with:
         paths: |
           policies/TEST_-_Deploy_-_Microsoft_Defender_should_be_enabled_for_Storage_Accounts_abb498b0-bcde-41bd-a89d-2c64e1105919/**
+          policies/CustomTagPolicyTest/**
