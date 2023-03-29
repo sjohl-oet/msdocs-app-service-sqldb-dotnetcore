@@ -3,7 +3,7 @@
   "displayName": "TEST - Deploy - Microsoft Defender should be enabled for Storage Accounts",
   "policyType": "Custom",
   "mode": "Indexed",
-  "description": "TEST - The Microsoft Defender should be enabled for the Storage Accounts at the Resource Group scope, and this is a deploy.",
+  "description": "TEST - The Microsoft Defender should be enabled for the Storage Accounts at the Resource Group scope, and this is a deploy and the deploy.",
   "metadata": {
    "category": "Storage",
    "createdBy": "a2f4f2e7-1f57-441d-af3c-8426e06a10e0",
