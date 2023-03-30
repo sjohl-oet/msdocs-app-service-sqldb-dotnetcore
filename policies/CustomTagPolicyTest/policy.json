@@ -3,7 +3,7 @@
     "displayName": "CustomTagPolicyTest",
     "policyType": "Custom",
     "mode": "All",
-    "description": "Adds below tags if not defined\nproject\naccount_code\ncost_center\ncost_center_percent\ncustomer_id\nrate_code\nservice_req\nurl\nusetype test \n",
+    "description": "Adds below tags if not defined\nproject\naccount_code\ncost_center\ncost_center_percent\ncustomer_id\nrate_code\nservice_req\nurl\nusetype test policy \n",
     "metadata": {
       "category": "Tags",
       "createdBy": "a2f4f2e7-1f57-441d-af3c-8426e06a10e0",
