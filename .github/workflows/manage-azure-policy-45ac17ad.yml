@@ -23,7 +23,8 @@ jobs:
     - name: Login to Azure
       uses: azure/login@v1
       with:
-        creds: ${{secrets.AZURE_CREDENTIALS_45ac17ad}}
+        #creds: ${{secrets.AZURE_CREDENTIALS_45ac17ad}}
+        creds: ${{secrets.AZURE_TEST_CREDENTIAL}}
         allow-no-subscriptions: true
     - name: Create or Update Azure Policies
       uses: azure/manage-azure-policy@v0
